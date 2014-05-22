@@ -16,21 +16,36 @@
 
 @implementation CsyViewController
 
+- (void)initDatas
+{
+    //读取plist文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"app.plist" ofType:nil];
+    NSArray *dicts = [NSArray arrayWithContentsOfFile:path];
+    
+    //通过plist文件，创建datas
+    NSMutableArray *datas = [NSMutableArray array];
+    
+    for(NSDictionary *dict in dicts)
+    {
+        [datas addObject:[CsyAppData appDataWithDictionary:dict]];
+    }
+    
+    self.datas = datas;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSDictionary *dict = @{@"name":@"cool pao",@"icon":@"icon_00"};
+    //初始化数据
+    [self initDatas];
     
     //获取数据
-    CsyAppData *data = [CsyAppData appDataWithDictionary:dict];
+    CsyAppData *data = self.datas[2];
     
-    //视图
-	NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"app" owner:nil options:nil];
+
     
-    CsyAppView * view = views[0];
-    
-    view.imageView.image = data.image;
-    view.name.text = data.name;
+    CsyAppView *view = [CsyAppView appViewWithAppData:data];
     
     [self.view addSubview:view];
     

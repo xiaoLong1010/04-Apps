@@ -9,13 +9,28 @@
 #import "CsyAppData.h"
 
 @interface CsyAppData ()
-
-
+{
+    UIImage *_image;
+    NSString *_name;
+}
 
 
 @end
 
 @implementation CsyAppData
+
+- (void)setImage:(UIImage *) image
+{
+    if (image != _image) {
+        _image = image;
+    }
+}
+
+- (void)setName:(NSString *)name
+{
+    _name = name;
+}
+
 
 - (instancetype)initWthDictionary:(NSDictionary *)dict
 {

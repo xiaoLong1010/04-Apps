@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CsyAppData;
 
 @interface CsyAppView : UIView
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
+//通过数据生成视图
++ (CsyAppView*)appViewWithAppData:(CsyAppData *)data;
 
 @end

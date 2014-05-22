@@ -7,32 +7,31 @@
 //
 
 #import "CsyAppView.h"
+#import "CsyAppData.h"
 
 @interface CsyAppView ()
-{
-    
-}
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
 
 @end
 
 @implementation CsyAppView
 
-- (id)initWithFrame:(CGRect)frame
+
++ (CsyAppView*)appViewWithAppData:(CsyAppData *)data
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    //通过xib文件，生成视图
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"app" owner:nil options:nil];
+    CsyAppView * view = views[0];
+    
+    //用数据填充视图
+    view.imageView.image = data.image;
+    view.name.text = data.name;
+    
+    return view;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

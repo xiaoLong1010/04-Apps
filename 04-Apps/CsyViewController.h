@@ -10,4 +10,8 @@
 
 @interface CsyViewController : UIViewController
 
+@property (nonatomic,strong) NSArray *datas;
+
+
+
 @end

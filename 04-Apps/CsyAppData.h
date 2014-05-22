@@ -10,9 +10,11 @@
 
 @interface CsyAppData : NSObject
 
-@property (strong,nonatomic) UIImage *image;
-@property (copy,nonatomic) NSString *name;
+//属性只读
+@property (strong,nonatomic,readonly) UIImage *image;
+@property (copy,nonatomic,readonly) NSString *name;
 
+//生成数据模型的方法
 + (instancetype)appDataWithDictionary:(NSDictionary *)dict;
 
 - (instancetype)initWthDictionary:(NSDictionary *)dict;
