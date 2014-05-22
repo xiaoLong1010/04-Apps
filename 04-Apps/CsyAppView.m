@@ -33,5 +33,24 @@
     return view;
 }
 
+- (IBAction)downloadClick:(UIButton *)sender {
+    
+    NSLog(@"click");
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
+    label.center = CGPointMake(160, 400);
+    label.text = self.name.text;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor redColor];
+    label.backgroundColor = [UIColor purpleColor];
+    label.alpha = 1.0;
+    
+    [self.superview addSubview:label];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        label.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [label removeFromSuperview];
+    }];
+}
 
 @end

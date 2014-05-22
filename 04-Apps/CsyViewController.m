@@ -10,6 +10,12 @@
 #import "CsyAppData.h"
 #import "CsyAppView.h"
 
+typedef enum {
+    kStartX = 20,
+    kStartY = 25,
+    kColumn = 3
+} DisplayParas;
+
 @interface CsyViewController ()
 
 @end
@@ -40,16 +46,33 @@
     //初始化数据
     [self initDatas];
     
+    
+    
+    //九宫格显示
+    for (int i = 0; i < self.datas.count; i++) {
+        
+        CsyAppData *data = self.datas[i];
+        CsyAppView *view = [CsyAppView appViewWithAppData:data];
+        
+        CGFloat x = kStartX + (i % 3) * (view.bounds.size.width + kStartX);
+        CGFloat y = kStartY + (i / 3) * (view.bounds.size.height + kStartY);
+        
+        view.frame = CGRectMake(x, y, view.bounds.size.width, view.bounds.size.height);
+        
+        [self.view addSubview:view];
+        
+    }
+    
     //获取数据
-    CsyAppData *data = self.datas[2];
-    
-
-    
-    CsyAppView *view = [CsyAppView appViewWithAppData:data];
-    
-    [self.view addSubview:view];
-    
-    view.frame = CGRectMake(30, 30, view.bounds.size.width, view.bounds.size.height);
+//    CsyAppData *data = self.datas[2];
+//    
+//
+//    
+//    CsyAppView *view = [CsyAppView appViewWithAppData:data];
+//    
+//    [self.view addSubview:view];
+//    
+//    view.frame = CGRectMake(30, 30, view.bounds.size.width, view.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning
