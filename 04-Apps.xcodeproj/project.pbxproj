@@ -21,6 +21,7 @@
 		20322624192E087F003695CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20322606192E087F003695CE /* UIKit.framework */; };
 		2032262C192E087F003695CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2032262A192E087F003695CE /* InfoPlist.strings */; };
 		2032262E192E087F003695CE /* _4_AppsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2032262D192E087F003695CE /* _4_AppsTests.m */; };
+		20322638192E0A48003695CE /* app.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20322637192E0A48003695CE /* app.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		20322629192E087F003695CE /* 04-AppsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "04-AppsTests-Info.plist"; sourceTree = "<group>"; };
 		2032262B192E087F003695CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2032262D192E087F003695CE /* _4_AppsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _4_AppsTests.m; sourceTree = "<group>"; };
+		20322637192E0A48003695CE /* app.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = app.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				20322614192E087F003695CE /* Main.storyboard */,
 				20322617192E087F003695CE /* CsyViewController.h */,
 				20322618192E087F003695CE /* CsyViewController.m */,
+				20322637192E0A48003695CE /* app.xib */,
 				2032261A192E087F003695CE /* Images.xcassets */,
 				20322609192E087F003695CE /* Supporting Files */,
 			);
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2032261B192E087F003695CE /* Images.xcassets in Resources */,
+				20322638192E0A48003695CE /* app.xib in Resources */,
 				2032260D192E087F003695CE /* InfoPlist.strings in Resources */,
 				20322616192E087F003695CE /* Main.storyboard in Resources */,
 			);

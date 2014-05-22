@@ -17,7 +17,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"app" owner:nil options:nil];
+    
+    UIView * view = views[0];
+    
+    [self.view addSubview:view];
+    
+    view.frame = CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning
