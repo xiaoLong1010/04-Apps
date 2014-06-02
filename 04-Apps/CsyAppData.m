@@ -19,25 +19,30 @@
 
 @implementation CsyAppData
 
-- (void)setImage:(UIImage *) image
-{
-    if (image != _image) {
-        _image = image;
-    }
-}
-
-- (void)setName:(NSString *)name
-{
-    _name = name;
-}
+//- (void)setImage:(UIImage *) image
+//{
+//    if (image != _image) {
+//        _image = image;
+//    }
+//}
+//
+//- (void)setName:(NSString *)name
+//{
+//    _name = name;
+//}
+//
+//- (UIImage *)image
+//{
+//    return _image;
+//}
 
 
 - (instancetype)initWthDictionary:(NSDictionary *)dict
 {
     self = [super init];
     if (self) {
-        self.image = [UIImage imageNamed:dict[@"icon"]];
-        self.name = dict[@"name"];
+        _image = [UIImage imageNamed:dict[@"icon"]];
+        _name = dict[@"name"];
     }
     
     return self;
